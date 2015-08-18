@@ -34,6 +34,7 @@
 
 (evil-leader/set-leader ",")
 (evil-leader/set-key
+  "," 'projectile-find-file
   "e" 'find-file
   "q" 'kill-buffer)
 
