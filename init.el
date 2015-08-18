@@ -13,12 +13,14 @@
   '(
      alchemist
      elixir-mode
+     enh-ruby-mode
      evil
      evil-leader
      evil-rails
      magit
      projectile
      relative-line-numbers
+     robe
      smartparens
      textmate
   ))
@@ -47,6 +49,9 @@
 
 (require 'projectile)
 (projectile-global-mode)
+
+(require 'enh-ruby-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
 
 (require 'smartparens)
 (smartparens-global-mode 1)
