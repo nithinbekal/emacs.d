@@ -36,3 +36,7 @@
 (evil-leader/set-key
   "e" 'find-file
   "q" 'kill-buffer)
+
+(require 'ido)
+(ido-mode t)
+
