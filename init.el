@@ -11,11 +11,15 @@
 
 (defvar my-packages
   '(
+     alchemist
+     elixir-mode
      evil
      evil-leader
      evil-rails
      magit
+     projectile
      relative-line-numbers
+     textmate
   ))
 
 (dolist (p my-packages)
@@ -38,6 +42,10 @@
   "e" 'find-file
   "q" 'kill-buffer)
 
-(require 'ido)
-(ido-mode t)
+(require 'elixir-mode)
 
+(require 'projectile)
+(projectile-global-mode)
+
+(require 'textmate)
+(textmate-mode)
