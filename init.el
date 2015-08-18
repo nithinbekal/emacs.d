@@ -19,6 +19,7 @@
      magit
      projectile
      relative-line-numbers
+     smartparens
      textmate
   ))
 
@@ -46,6 +47,9 @@
 
 (require 'projectile)
 (projectile-global-mode)
+
+(require 'smartparens)
+(smartparens-global-mode 1)
 
 (require 'textmate)
 (textmate-mode)
