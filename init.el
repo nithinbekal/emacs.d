@@ -12,7 +12,9 @@
 (defvar my-packages
   '(
      evil
-     magit))
+     evil-rails
+     magit
+  ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -20,4 +22,6 @@
 
 (require 'evil)
 (evil-mode t)
+
+(require 'evil-rails)
 
