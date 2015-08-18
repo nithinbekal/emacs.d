@@ -18,3 +18,6 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+(require 'evil)
+(evil-mode t)
+
