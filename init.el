@@ -15,11 +15,14 @@
      evil-leader
      evil-rails
      magit
+     relative-line-numbers
   ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(global-relative-line-numbers-mode)
 
 (require 'evil)
 (evil-mode t)
