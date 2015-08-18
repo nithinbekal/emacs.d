@@ -12,6 +12,7 @@
 (defvar my-packages
   '(
      evil
+     evil-leader
      evil-rails
      magit
   ))
@@ -25,3 +26,10 @@
 
 (require 'evil-rails)
 
+(require 'evil-leader)
+(global-evil-leader-mode)
+
+(evil-leader/set-leader ",")
+(evil-leader/set-key
+  "e" 'find-file
+  "q" 'kill-buffer)
