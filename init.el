@@ -12,54 +12,37 @@
 (defvar my-packages
   '(
      alchemist
+     coffee-mode
+     company
      elixir-mode
-     enh-ruby-mode
      evil
      evil-leader
+     evil-nerd-commenter
      evil-rails
+     evil-surround
+     evil-visualstar
+     flx-ido
+     haml-mode
      helm
+     key-chord
      magit
+     mmm-mode
+     pbcopy
+     powerline
      projectile
      relative-line-numbers
+     ruby-mode
      robe
+     saveplace
      smartparens
+     smex
+     smooth-scrolling
      textmate
+     ujelly-theme
   ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-(global-relative-line-numbers-mode)
-
-(require 'evil)
-(evil-mode t)
-
-(require 'evil-rails)
-
-(require 'evil-leader)
-(global-evil-leader-mode)
-
-(evil-leader/set-leader ",")
-(evil-leader/set-key
-  "," 'helm-find-file
-  "e" 'find-file
-  "q" 'kill-buffer)
-
-(require 'elixir-mode)
-
-(require 'helm-config)
-(setq helm-autoresize-mode t)
-(setq helm-buffers-fuzzy-matching t)
-
-(require 'projectile)
-(projectile-global-mode)
-
-(require 'enh-ruby-mode)
-(add-hook 'ruby-mode-hook 'robe-mode)
-
-(require 'smartparens)
-(smartparens-global-mode 1)
-
-(require 'textmate)
-(textmate-mode)
+(load "~/.emacs.d/custom/config.el")
