@@ -24,6 +24,7 @@
      flx-ido
      haml-mode
      helm
+     ido-vertical-mode
      key-chord
      magit
      mmm-mode

@@ -14,9 +14,12 @@
 (setq ido-decorations (quote ("\n↪ "     "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 
 (require 'flx-ido)
+(require 'ido-vertical-mode)
+
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
+(ido-vertical-mode 1)
 
 ;; Parens handling
 ;; Show and create matching parens automatically
