@@ -163,7 +163,6 @@ Repeated invocations toggle between the two most recently open buffers."
 ;; =============================================================================
 ;; Evil Bindings
 ;; =============================================================================
-;; (define-key evil-normal-state-map (kbd "RET") 'save-buffer)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-scroll-down)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-scroll-up)
 
@@ -270,35 +269,6 @@ Repeated invocations toggle between the two most recently open buffers."
 (require 'powerline)
 (powerline-vim-theme)
 
-; (setq-default mode-line-format
-;               '("%e"
-;                 (:eval
-;                  (let* ((active (powerline-selected-window-active))
-;                         (mode-line (if active 'mode-line 'mode-line-inactive))
-;                         (face1 (if active 'powerline-active1 'powerline-inactive1))
-;                         (face2 (if active 'powerline-active2 'powerline-inactive2))
-;                         (separator-left (intern (format "powerline-%s-%s"
-;                                                         powerline-default-separator
-;                                                         (car powerline-default-separator-dir))))
-;                         (separator-right (intern (format "powerline-%s-%s"
-;                                                          powerline-default-separator
-;                                                          (cdr powerline-default-separator-dir))))
-;                         (lhs (list (powerline-buffer-id `(mode-line-buffer-id ,mode-line) 'l)
-;                                    (when (and vc-mode buffer-file-name)
-;                                      (let ((backend (vc-backend buffer-file-name)))
-;                                        (when backend
-;                                          (concat (powerline-raw "[" mode-line 'l)
-;                                                  (powerline-raw (format "%s" (vc-working-revision buffer-file-name backend)))
-;                                                  (powerline-raw "]" mode-line)))))))
-;                         (rhs (list (powerline-raw global-mode-string mode-line 'r)
-;                                    (powerline-raw "%l," mode-line 'l)
-;                                    (powerline-raw (format-mode-line '(10 "%c")))
-;                                    (powerline-raw (replace-regexp-in-string  "%" "%%" (format-mode-line '(-3 "%p"))) mode-line 'r))))
-;                    (concat (powerline-render lhs)
-;                            (powerline-fill mode-line (powerline-width rhs))
-;                            (powerline-render rhs))))))
-
-
 ;; Highlight cursor line
 (global-hl-line-mode t)
 (set-face-background hl-line-face "gray10")
@@ -341,8 +311,6 @@ Repeated invocations toggle between the two most recently open buffers."
   (add-hook 'after-make-frame-functions (lambda (frame) (my-evil-terminal-cursor-change)))
   (my-evil-terminal-cursor-change)
 
-
-;; (defun change-major-mode-hook () (modify-syntax-entry ?_ "w"))
 (setq inhibit-startup-screen t)
 
 ;; =============================================================================
@@ -550,8 +518,6 @@ one more than the current position."
       :front "^~~~\s?javascript[\n\r]"
       :back "^~~~$")))
 
-
-;; (setq mmm-global-mode 't)
 (setq mmm-submode-decoration-level 0)
 
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-rubyp))
