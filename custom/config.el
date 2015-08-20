@@ -247,7 +247,13 @@ Repeated invocations toggle between the two most recently open buffers."
 ;; UI
 ;; =============================================================================
 
-(global-linum-mode t)
+(global-relative-line-numbers-mode)
+
+(defun padded-line-numbers (offset)
+    (format "%2d " (abs offset)))
+
+(setq relative-line-numbers-format #'padded-line-numbers)
+
 (setq-default truncate-lines t)
 
 (defun linum-format-func (line)
