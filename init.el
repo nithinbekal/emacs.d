@@ -13,7 +13,6 @@
   '(
      alchemist
      coffee-mode
-     company
      elixir-mode
      evil
      evil-leader
