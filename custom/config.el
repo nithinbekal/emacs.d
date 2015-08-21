@@ -217,15 +217,7 @@ Repeated invocations toggle between the two most recently open buffers."
     (format "%2d " (abs offset)))
 
 (setq relative-line-numbers-format #'padded-line-numbers)
-
 (setq-default truncate-lines t)
-
-(defun linum-format-func (line)
-  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-     (propertize (format (format "%%%dd " w) line) 'face 'linum)))
-
-(setq linum-format 'linum-format-func)
-;; use customized linum-format: add a addition space after the line number
 
 ;; Remember the cursor position of files when reopening them
 (setq save-place-file "~/.emacs.d/saveplace")
@@ -234,14 +226,6 @@ Repeated invocations toggle between the two most recently open buffers."
 
 ;; show the column number in the status bar
 (column-number-mode t)
-
-;; Powerline
-(require 'powerline)
-(powerline-vim-theme)
-
-;; Highlight cursor line
-(global-hl-line-mode t)
-(set-face-background hl-line-face "gray10")
 
 ;; Make lines longer than 80 highlighted
 (setq whitespace-line-column 80) ;; limit line length
@@ -308,15 +292,6 @@ Repeated invocations toggle between the two most recently open buffers."
                               (scroll-up 1)))
   (defun track-mouse (e))
   (setq mouse-sel-mode t)
-)
-
-(defun author-mode ()
-  (interactive)
-  (linum-mode -1)
-  (writeroom-mode t)
-  (longlines-mode t)
-  (flyspell-mode t)
-  (turn-off-smartparens-mode)
 )
 
 ;; I want underscores as part of word in all modes

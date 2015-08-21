@@ -27,8 +27,6 @@
      key-chord
      magit
      mmm-mode
-     pbcopy
-     powerline
      projectile
      relative-line-numbers
      ruby-mode
