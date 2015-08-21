@@ -84,10 +84,13 @@
 ;; =============================================================================
 ;; Evil
 ;; =============================================================================
+
+(setq evil-toggle-key "")
+
 (require 'evil)
 (evil-mode 1)
+
 (global-evil-visualstar-mode 1)
-; (setq evil-default-cursor t)
 (progn (setq evil-default-state 'normal)
        (setq evil-auto-indent t)
        (setq evil-shift-width 2)
@@ -138,6 +141,7 @@
   "gj" 'windmove-down
   "gl" 'windmove-right
   "gh" 'windmove-left
+  "rv" 'projectile-rails-find-current-view
   "vs" 'split-window-right
   "hs" 'split-window-below
   "x" 'smex)
