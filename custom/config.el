@@ -82,26 +82,26 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 (evil-leader/set-key
-  "." 'find-tag
-  "t" 'projectile-find-file
-  "b" 'ido-switch-buffer
-  "cc" 'evilnc-comment-or-uncomment-lines
+  ","  'switch-to-previous-buffer
+  "."  'find-tag
   "ag" 'projectile-ag
-  "," 'switch-to-previous-buffer
-  "gb" 'mo-git-blame-current
+  "b"  'ido-switch-buffer
+  "cc" 'evilnc-comment-or-uncomment-lines
   "gL" 'magit-log
-  "gs" 'magit-status
-  "w"  'kill-buffer
-  "nn" 'neotree-toggle
-  "nf" 'neotree-find
-  "gk" 'windmove-up
-  "gj" 'windmove-down
-  "gl" 'windmove-right
+  "gb" 'mo-git-blame-current
   "gh" 'windmove-left
-  "rv" 'projectile-rails-find-current-view
-  "vs" 'split-window-right
+  "gj" 'windmove-down
+  "gk" 'windmove-up
+  "gl" 'windmove-right
+  "gs" 'magit-status
   "hs" 'split-window-below
-  "x" 'smex)
+  "nf" 'neotree-find
+  "nn" 'neotree-toggle
+  "rv" 'projectile-rails-find-current-view
+  "t"  'projectile-find-file
+  "vs" 'split-window-right
+  "w"  'kill-buffer
+  "x"  'smex)
 
 ;; =============================================================================
 ;; Evil Packages
