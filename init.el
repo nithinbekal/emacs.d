@@ -38,7 +38,6 @@
      smartparens
      smex
      smooth-scrolling
-     textmate
      ujelly-theme
   ))
 
