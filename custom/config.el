@@ -95,8 +95,6 @@
   "gl" 'windmove-right
   "gs" 'magit-status
   "hs" 'split-window-below
-  "nf" 'neotree-find
-  "nn" 'neotree-toggle
   "rv" 'projectile-rails-find-current-view
   "t"  'projectile-find-file
   "vs" 'split-window-right
@@ -186,18 +184,6 @@ Repeated invocations toggle between the two most recently open buffers."
 (define-key evil-normal-state-map "gj" 'windmove-down)
 (define-key evil-normal-state-map "gk" 'windmove-up)
 (define-key evil-normal-state-map "gl" 'windmove-right)
-
-(add-hook 'neotree-mode-hook
- (lambda ()
-   (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-   (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-   (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-   (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
-         (define-key evil-normal-state-local-map (kbd "ma") 'neotree-create-node)
-         (define-key evil-normal-state-local-map (kbd "md") 'neotree-delete-node)
-         (define-key evil-normal-state-local-map (kbd "r") 'neotree-refresh)
-         (define-key evil-normal-state-local-map (kbd "mm") 'neotree-rename-node)
-))
 
 ;; Map ctrl-j/k to up down in ido selections
 (add-hook 'ido-setup-hook
