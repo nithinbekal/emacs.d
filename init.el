@@ -20,3 +20,8 @@
   (unless (package-installed-p p)
     (package-install p)))
 
+; Enable ujelly-theme - I use jellybean theme with vim, and ujelly is the
+; closest one I've found for emacs.
+
+(require 'ujelly-theme)
+
