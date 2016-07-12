@@ -30,23 +30,22 @@
 
   :ensure t
   :init
-  (progn
 
-    (use-package evil-leader
-      ; Configure leader keys for evil mode.
+  (use-package evil-leader
+    ; Configure leader keys for evil mode.
 
-      :ensure t
-      :init (global-evil-leader-mode)
+    :ensure t
+    :init (global-evil-leader-mode)
 
-      :config
-      (progn
-        (evil-leader/set-leader ",")
-        (evil-leader/set-key
-          "t"  'helm-find-files
-          "v"  'split-window-right
-          "yb" (kbd "gg v G y")     ; Yank buffer
-        )))
-    (evil-mode 1)))
+    :config
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key
+      "t"  'helm-find-files
+      "v"  'split-window-right
+      "yb" (kbd "gg v G y")     ; Yank buffer
+    ))
+
+  (evil-mode 1))
 
 
 (use-package helm
@@ -56,14 +55,13 @@
 
   :ensure t
   :init
-  (progn
-    ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
-    ; settings. This will avoid the issues.
-    (setq tramp-ssh-controlmaster-options
-          "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+  ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
+  ; settings. This will avoid the issues.
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
-    (require 'helm-config)
-    (helm-mode)))
+  (require 'helm-config)
+  (helm-mode))
 
 
 (use-package ujelly-theme
