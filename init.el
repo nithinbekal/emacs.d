@@ -13,7 +13,11 @@
 ; When emacs starts, package.el will look for packages that are not installed
 ; yet and install them.
 
-(defvar packages-list '(ujelly-theme)
+(defvar packages-list
+  '(
+    evil
+    ujelly-theme
+    )
   "List of packages that are installed on first startup.")
 
 (dolist (p packages-list)
@@ -27,3 +31,8 @@
 
 ; Disable the menu bar at the top.
 (menu-bar-mode -1)
+
+; Enable evil-mode
+(require 'evil)
+(evil-mode 1)
+
