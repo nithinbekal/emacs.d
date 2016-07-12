@@ -40,7 +40,7 @@
     :config
     (evil-leader/set-leader ",")
     (evil-leader/set-key
-      "t"  'helm-find-files
+      "t"  'projectile-find-file
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
     ))
@@ -62,6 +62,25 @@
 
   (require 'helm-config)
   (helm-mode))
+
+
+(use-package projectile
+  ; Project interaction library for emacs. Allows doing things like jump to
+  ; file in project or project-wide search.
+
+  :config
+  (use-package helm-projectile
+    ; Helm integration for projectile.
+
+    :config
+    (setq projectile-completion-system 'helm)
+    (helm-projectile-on)
+
+    :ensure t)
+
+  (projectile-global-mode)
+
+  :ensure t)
 
 
 (use-package ujelly-theme
