@@ -22,6 +22,10 @@
     (package-refresh-contents)
     (package-install 'use-package))
 
+; use-package isn't needed at runtime, so this can reduce load time.
+(eval-when-compile
+  (require 'use-package))
+
 
 (use-package evil
   ; Powerfule vim emulation inside emacs.
