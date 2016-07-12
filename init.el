@@ -80,6 +80,8 @@
   ; Project interaction library for emacs. Allows doing things like jump to
   ; file in project or project-wide search.
 
+  :defer 1
+
   :config
   (use-package helm-projectile
     ; Helm integration for projectile.
@@ -90,7 +92,7 @@
 
     :ensure t)
 
-  (projectile-global-mode)
+  (projectile-mode t)
 
   :ensure t)
 
