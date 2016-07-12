@@ -48,20 +48,34 @@
   (evil-mode 1))
 
 
-(use-package helm
+(use-package helm-config
   ; Helm allows fuzzy autocomplete for interactions requiring selecting an item
   ; from many possible choices.
   ; Detailed tutorial: http://tuhdo.github.io/helm-intro.html
 
-  :ensure t
   :init
   ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
   ; settings. This will avoid the issues.
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
-  (require 'helm-config)
-  (helm-mode))
+  :config
+  (use-package helm
+    ; To run helm, we need (require 'helm-config), which is why this package is
+    ; included inside (use-package helm-config).
+
+    :init
+    ; Enable fuzzy matching for M-x and limit candidates to 100 for faster
+    ; fuzzy matching.
+    (setq helm-M-x-fuzzy-match t)
+    (setq helm-candidate-number-limit 100)
+
+    :config
+    (helm-mode 1)
+
+    :ensure t)
+
+  (global-set-key (kbd "M-x") 'helm-M-x))
 
 
 (use-package projectile
