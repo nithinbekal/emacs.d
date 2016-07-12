@@ -22,19 +22,17 @@
     (package-refresh-contents)
     (package-install 'use-package))
 
-(require 'use-package)
-
 
 (use-package evil
   ; Powerfule vim emulation inside emacs.
 
-  :ensure t
   :init
 
   (use-package evil-leader
     ; Configure leader keys for evil mode.
+    ; (global-evil-leader-mode) should be loaded before (evil-mode), which is
+    ; why evil-leader is in the init section.
 
-    :ensure t
     :init (global-evil-leader-mode)
 
     :config
@@ -43,9 +41,13 @@
       "t"  'projectile-find-file
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
-    ))
+      )
 
-  (evil-mode 1))
+    :ensure t)
+
+  (evil-mode 1)
+
+  :ensure t)
 
 
 (use-package helm-config
