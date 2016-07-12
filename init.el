@@ -25,3 +25,5 @@
 
 (require 'ujelly-theme)
 
+; Disable the menu bar at the top.
+(menu-bar-mode -1)
