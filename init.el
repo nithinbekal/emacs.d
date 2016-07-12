@@ -9,3 +9,14 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+; Add all the packages you want to install in the packages-list variable.
+; When emacs starts, package.el will look for packages that are not installed
+; yet and install them.
+
+(defvar packages-list '(ujelly-theme)
+  "List of packages that are installed on first startup.")
+
+(dolist (p packages-list)
+  (unless (package-installed-p p)
+    (package-install p)))
+
