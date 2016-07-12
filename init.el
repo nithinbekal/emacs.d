@@ -16,6 +16,7 @@
 (defvar packages-list
   '(
     evil
+    evil-leader
     helm
     ujelly-theme
     )
@@ -33,9 +34,29 @@
 ; Disable the menu bar at the top.
 (menu-bar-mode -1)
 
-; Enable evil-mode
+
+; evil-mode
+; ****************
+
 (require 'evil)
+(global-evil-leader-mode)
 (evil-mode 1)
+
+(require 'evil-leader)
+
+; Define leader key mappings
+
+(evil-leader/set-leader ",")
+
+(evil-leader/set-key
+  "t"  'helm-find-files
+  "v"  'split-window-right
+  "yb" (kbd "gg v G y")     ; Yank buffer
+  )
+
+
+; helm-mode
+; *********
 
 ; Helm allows fuzzy autocomplete for interactions requiring selecting an item
 ; from many possible choices.
