@@ -209,6 +209,28 @@
   :ensure t)
 
 
+(use-package smartparens-config
+  ; Managing paired characters like parentheses, braces, brackets, quotes, etc.
+  ; Tutorial: https://ebzzry.github.io/emacs-pairs.html
+
+  :defer t
+
+  :init
+  (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
+
+  :config
+  (show-smartparens-global-mode t)
+
+  :ensure smartparens)
+
+
+(use-package evil-smartparens
+  :init
+  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+
+  :ensure t)
+
+
 (use-package spaceline-config
   ; Modeline that is used in spacemacs
 
