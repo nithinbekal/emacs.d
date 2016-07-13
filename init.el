@@ -49,7 +49,9 @@
   :ensure t)
 
 
-(use-package coffee-mode :ensure t)
+(use-package coffee-mode
+  :defer t
+  :ensure t)
 
 
 (use-package dash-at-point
