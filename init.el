@@ -86,6 +86,23 @@
   :ensure t)
 
 
+(use-package linum-relative
+  ; Set relative numbering for line numbers. The actual line number is shown
+  ; for the current line, but all other lines are shown relative to current.
+
+  :init
+  (setq
+    linum-relative-current-symbol ""
+    linum-relative-format "%3s "
+    linum-delay t)
+
+  :config
+  (linum-relative-global-mode)
+  (linum-relative-in-helm-p) ; Disable linum in helm
+
+  :ensure t)
+
+
 (use-package magit
   ; Awesome git interface inside emacs.
   ; <leader>gs - Git status
