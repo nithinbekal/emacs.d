@@ -27,6 +27,12 @@
   (require 'use-package))
 
 
+(use-package dash-at-point
+  ; Opens Dash.app to look up documentation for the word at point.
+  ; I map <leader>dd using evil-leader to be able to easily access it.
+  :ensure t)
+
+
 (use-package evil
   ; Powerfule vim emulation inside emacs.
 
@@ -42,6 +48,7 @@
     :config
     (evil-leader/set-leader ",")
     (evil-leader/set-key
+      "dd" 'dash-at-point
       "t"  'projectile-find-file
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
