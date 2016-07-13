@@ -78,6 +78,8 @@
     :config
     (global-evil-surround-mode 1)
 
+    (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
+
     :ensure t)
 
   (evil-mode 1)
@@ -157,6 +159,16 @@
     :ensure t)
 
   (projectile-mode t)
+
+  :ensure t)
+
+(use-package robe
+  ; Allows powerful jump-to-method and other conveniences for Ruby.
+
+  :defer t
+
+  :init
+  (add-hook 'ruby-mode-hook 'robe-mode)
 
   :ensure t)
 
