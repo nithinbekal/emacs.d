@@ -38,6 +38,17 @@
   (require 'use-package))
 
 
+(use-package clojure-mode
+  :defer t
+
+  :config
+  (use-package cider
+    :defer t
+    :ensure t)
+
+  :ensure t)
+
+
 (use-package coffee-mode :ensure t)
 
 
