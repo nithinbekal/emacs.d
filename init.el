@@ -215,6 +215,19 @@
   :ensure t)
 
 
+(use-package saveplace
+  ; When you visit a file, point goes to the last place where it was when you
+  ; previously visited the same file.
+
+  :init
+  (setq save-place-file "~/.emacs.d/saved-places")
+
+  :config
+  (setq-default save-place t)
+
+  :ensure t)
+
+
 (use-package smartparens-config
   ; Managing paired characters like parentheses, braces, brackets, quotes, etc.
   ; Tutorial: https://ebzzry.github.io/emacs-pairs.html
