@@ -49,6 +49,8 @@
     (evil-leader/set-leader ",")
     (evil-leader/set-key
       "dd" 'dash-at-point
+      "gs" 'magit-status
+      "s"  'projectile-toggle-between-implementation-and-test
       "t"  'projectile-find-file
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
@@ -83,6 +85,14 @@
   :ensure t)
 
 
+(use-package magit
+  ; Awesome git interface inside emacs.
+  ; <leader>gs - Git status
+
+  :defer t
+  :ensure t)
+
+
 (use-package projectile
   ; Project interaction library for emacs. Allows doing things like jump to
   ; file in project or project-wide search.
@@ -97,6 +107,12 @@
     (setq projectile-completion-system 'helm)
     (helm-projectile-on)
 
+    :ensure t)
+
+  (use-package projectile-rails
+    ; Provides useful Ex commands like find model/controller etc.
+    ; Supports projectile-completion-system, allowing use of evil-leader
+    ; keybinding <leader>s for toggling between code and test.
     :ensure t)
 
   (projectile-mode t)
