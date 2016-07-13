@@ -69,6 +69,8 @@
   ; from many possible choices.
   ; Detailed tutorial: http://tuhdo.github.io/helm-intro.html
 
+  :defer t
+
   :init
   ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
   ; settings. This will avoid the issues.
