@@ -38,6 +38,9 @@
   (require 'use-package))
 
 
+(use-package coffee-mode :ensure t)
+
+
 (use-package dash-at-point
   ; Opens Dash.app to look up documentation for the word at point.
   ; I map <leader>dd using evil-leader to be able to easily access it.
