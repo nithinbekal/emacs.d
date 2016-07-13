@@ -234,6 +234,7 @@
   :init
   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
 
+  :defer t
   :ensure t)
 
 
