@@ -152,7 +152,12 @@
   ; Project interaction library for emacs. Allows doing things like jump to
   ; file in project or project-wide search.
 
-  :defer 1
+  ; TODO: Figure out a better way to make projectile load quickly.
+  ; projectile takes almost 500ms to load, so defer loading until 10ms after
+  ; start up so emacs feels snappier. Deferring for 1s occassionally leads to
+  ; projectile not being available when I start using it immediately after
+  ; opening emacs.
+  :defer 0.01
 
   :config
   (use-package helm-projectile
