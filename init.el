@@ -63,9 +63,13 @@
 (use-package elixir-mode
   ; Syntax highlighting and navigation for Elixir.
 
+  :defer t
+
   :config
   ; Elixir tooling support.
-  (use-package alchemist :ensure t)
+  (use-package alchemist
+    :defer t
+    :ensure t)
 
   :ensure t)
 
