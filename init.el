@@ -50,6 +50,7 @@
     (evil-leader/set-key
       "dd" 'dash-at-point
       "gs" 'magit-status
+      "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
       "t"  'projectile-find-file
       "v"  'split-window-right
