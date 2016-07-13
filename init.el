@@ -44,6 +44,11 @@
   :ensure t)
 
 
+(use-package elixir-mode
+  ; Syntax highlighting and navigation for Elixir.
+  :ensure t)
+
+
 (use-package evil
   ; Powerfule vim emulation inside emacs.
 
