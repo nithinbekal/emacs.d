@@ -70,6 +70,16 @@
 
     :ensure t)
 
+  (use-package evil-surround
+    ; Emacs port of vim-surround.
+    ; Allows adding/removing/changing surround characters.
+    ; eg. `cs"'` in normal mode changes surround from double to single quotes.
+
+    :config
+    (global-evil-surround-mode 1)
+
+    :ensure t)
+
   (evil-mode 1)
 
   :ensure t)
