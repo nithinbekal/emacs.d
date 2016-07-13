@@ -136,6 +136,13 @@
   :ensure t)
 
 
+(use-package pbcopy
+  ; macOS clipboard integration - Makes yanked text available in system
+  ; clipboard and vice versa. This works automatically in GUI emacs, but this
+  ; package makes it available in terminal emacs too.
+  :ensure t)
+
+
 (use-package projectile
   ; Project interaction library for emacs. Allows doing things like jump to
   ; file in project or project-wide search.
