@@ -1,4 +1,15 @@
 
+
+; Set GC threshold to 100MB (default is 800KB) to improve start up time.
+; For my current emacs.d setup, this has improved startup time has gone from
+; 510ms to 270ms - a 47% improvement!
+; The downside is that GCing 100MB could cause GC pauses while you're working,
+; so it's a good idea to set the limit lower once init has completed.
+; I haven't reset the threshold here yet.
+; https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/
+(setq gc-cons-threshold 100000000)
+
+
 ; package.el is the built-in package manager included in emacs.
 ; By default it uses the GNU ELPA repository to look for packages.
 ; GNU ELPA contains a very small number of packages, so we add MELPA, where
