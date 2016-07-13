@@ -46,6 +46,11 @@
 
 (use-package elixir-mode
   ; Syntax highlighting and navigation for Elixir.
+
+  :config
+  ; Elixir tooling support.
+  (use-package alchemist :ensure t)
+
   :ensure t)
 
 
