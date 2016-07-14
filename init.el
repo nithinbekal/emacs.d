@@ -128,6 +128,16 @@
   (define-key evil-normal-state-map "\C-s" 'save-buffer)
   (define-key evil-insert-state-map "\C-s" 'save-buffer)
 
+  ; Use C-u to delete line backwards
+  ; Ref: https://github.com/purcell/emacs.d/blob/485a3af948db4671baf73f14bced123bae3112f3/init-editing-utils.el#L147
+  (define-key evil-insert-state-map "\C-u"
+    (lambda ()
+      (interactive)
+      (let ((prev-pos (point)))
+          (back-to-indentation)
+          (kill-region (point) prev-pos))))
+
+  ; Use C-] to jump to definition in ruby
   (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
 
   (define-key evil-normal-state-map "gh" 'windmove-left)
