@@ -82,6 +82,17 @@
 
   :init
 
+  (use-package evil-mc
+    ; Multiple cursor support
+    ; C-n/C-p to create cursors
+    ; C-t to skip cursor
+    ; gru to undo all cursors
+
+    :init
+    (global-evil-mc-mode 1)
+
+    :ensure t)
+
   (use-package evil-leader
     ; Configure leader keys for evil mode.
     ; (global-evil-leader-mode) should be loaded before (evil-mode), which is
@@ -319,6 +330,12 @@
 (use-package ujelly-theme
   ; Enable ujelly-theme - I use jellybean theme with vim, and ujelly is the
   ; closest one I've found for emacs.
+  :ensure t)
+
+
+(use-package web-mode
+  ; Supports highlighting for HTML, CSS, erb etc.
+  :defer t
   :ensure t)
 
 
