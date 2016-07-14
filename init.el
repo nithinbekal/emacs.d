@@ -27,6 +27,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+; Start GUI emacs maximized
+(set-frame-parameter nil 'fullscreen 'maximized)
 
 ; use-package allows you to load packages lazily, and speeds up the initial
 ; load time of emacs.
