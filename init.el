@@ -286,6 +286,15 @@
   :ensure t)
 
 
+(use-package smooth-scrolling
+  ; Always keep a few lines visible for context when scrolling
+
+  :config
+  (smooth-scrolling-mode 1)
+
+  :ensure t)
+
+
 (use-package spaceline-config
   ; Modeline that is used in spacemacs
 
