@@ -321,3 +321,7 @@
   ; closest one I've found for emacs.
   :ensure t)
 
+
+; Now that emacs has started up, we can set GC threshold to 50MB.
+(setq gc-cons-threshold 50000000)
+
