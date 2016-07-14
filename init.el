@@ -30,6 +30,7 @@
 ; Start GUI emacs maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
 
+
 ; use-package allows you to load packages lazily, and speeds up the initial
 ; load time of emacs.
 
@@ -99,6 +100,14 @@
       "t"  'projectile-find-file
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
+
+      "gg" (lambda ()
+             (interactive)
+             (find-file "~/Dropbox/todo/work.md"))
+
+      "gt" (lambda ()
+             (interactive)
+             (find-file "~/Dropbox/todo/gtd.md"))
       )
 
     :ensure t)
