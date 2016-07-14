@@ -30,6 +30,9 @@
 ; Start GUI emacs maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
 
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+
 
 ; use-package allows you to load packages lazily, and speeds up the initial
 ; load time of emacs.
