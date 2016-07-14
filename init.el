@@ -92,12 +92,12 @@
     :config
     (evil-leader/set-leader ",")
     (evil-leader/set-key
+      ","  'projectile-find-file
       "dd" 'dash-at-point
       "f"  'helm-projectile-ag
       "gs" 'magit-status
       "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
-      "t"  'projectile-find-file
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
 
