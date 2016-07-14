@@ -148,6 +148,15 @@
   ; Suspend emacs on C-z in normal mode (this is mapped to C-x C-z by default)
   (define-key evil-normal-state-map "\C-z" 'suspend-frame)
 
+  ; Unimpaired - Adding some of the keybindings from vim-unimpaired
+  ; TODO: Accept count so you can do "5 [ SPC" to insert 5 empty lines
+
+  (define-key evil-normal-state-map (kbd "[ SPC") (lambda() (interactive)(evil-insert-newline-above) (forward-line)))
+  (define-key evil-normal-state-map (kbd "] SPC") (lambda() (interactive)(evil-insert-newline-below) (forward-line -1)))
+
+  (define-key evil-normal-state-map (kbd "[ b") 'previous-buffer)
+  (define-key evil-normal-state-map (kbd "] b") 'next-buffer)
+
   :ensure t)
 
 
