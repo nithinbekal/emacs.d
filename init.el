@@ -124,6 +124,10 @@
 
   (evil-mode 1)
 
+  ; Use C-s to save files
+  (define-key evil-normal-state-map "\C-s" 'save-buffer)
+  (define-key evil-insert-state-map "\C-s" 'save-buffer)
+
   (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
 
   (define-key evil-normal-state-map "gh" 'windmove-left)
