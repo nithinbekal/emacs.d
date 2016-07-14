@@ -115,6 +115,11 @@
 
   (evil-mode 1)
 
+  (define-key evil-normal-state-map "gh" 'windmove-left)
+  (define-key evil-normal-state-map "gj" 'windmove-down)
+  (define-key evil-normal-state-map "gk" 'windmove-up)
+  (define-key evil-normal-state-map "gl" 'windmove-right)
+
   :ensure t)
 
 
