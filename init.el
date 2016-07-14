@@ -111,6 +111,8 @@
       "s"  'projectile-toggle-between-implementation-and-test
       "v"  'split-window-right
       "yb" (kbd "gg v G y")     ; Yank buffer
+      "yt" 'yafolding-toggle-element
+      "yy" 'yafolding-toggle-all
 
       "gg" (lambda ()
              (interactive)
@@ -267,6 +269,7 @@
   :defer 0.01
   :ensure t)
 
+
 (use-package robe
   ; Allows powerful jump-to-method and other conveniences for Ruby.
 
@@ -341,6 +344,18 @@
 
 (use-package web-mode
   ; Supports highlighting for HTML, CSS, erb etc.
+  :defer t
+  :ensure t)
+
+
+(use-package yafolding
+  ; Code folding
+  ; <leader>yy toggles all elements
+  ; <leader>yt toggles current element
+
+  :init
+  (add-hook 'prog-mode-hook 'yafolding-mode)
+
   :defer t
   :ensure t)
 
