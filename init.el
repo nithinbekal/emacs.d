@@ -90,6 +90,7 @@
     (evil-leader/set-leader ",")
     (evil-leader/set-key
       "dd" 'dash-at-point
+      "f"  'helm-projectile-ag
       "gs" 'magit-status
       "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
@@ -137,7 +138,13 @@
   (require 'helm-config)
 
   (global-set-key (kbd "M-x") 'helm-M-x)
-  
+
+  (use-package helm-ag
+    ; helm-ag package allows use of helm-projectile-ag for project wide search.
+    ; <leader>f is used for the project search.
+    :defer t
+    :ensure t)
+
   :ensure t)
 
 
