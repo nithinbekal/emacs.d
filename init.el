@@ -120,6 +120,9 @@
   (define-key evil-normal-state-map "gk" 'windmove-up)
   (define-key evil-normal-state-map "gl" 'windmove-right)
 
+  ; Suspend emacs on C-z in normal mode (this is mapped to C-x C-z by default)
+  (define-key evil-normal-state-map "\C-z" 'suspend-frame)
+
   :ensure t)
 
 
