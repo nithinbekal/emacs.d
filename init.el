@@ -171,6 +171,12 @@
   :ensure t)
 
 
+(use-package haml-mode
+  ; HAML syntax highlighting
+  :defer t
+  :ensure t)
+
+
 (use-package helm
   ; Helm allows fuzzy autocomplete for interactions requiring selecting an item
   ; from many possible choices.
