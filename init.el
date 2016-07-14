@@ -39,13 +39,12 @@
 
 
 (use-package clojure-mode
-  :defer t
-
   :config
   (use-package cider
     :defer t
     :ensure t)
 
+  :defer t
   :ensure t)
 
 
@@ -63,19 +62,18 @@
 (use-package elixir-mode
   ; Syntax highlighting and navigation for Elixir.
 
-  :defer t
-
   :config
-  ; Elixir tooling support.
   (use-package alchemist
+    ; Elixir tooling support.
     :defer t
     :ensure t)
 
+  :defer t
   :ensure t)
 
 
 (use-package evil
-  ; Powerfule vim emulation inside emacs.
+  ; Powerful vim emulation inside emacs.
 
   :init
 
@@ -131,8 +129,6 @@
   ; from many possible choices.
   ; Detailed tutorial: http://tuhdo.github.io/helm-intro.html
 
-  :defer t
-
   :init
   ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
   ; settings. This will avoid the issues.
@@ -153,6 +149,7 @@
     :defer t
     :ensure t)
 
+  :defer t
   :ensure t)
 
 
@@ -176,7 +173,6 @@
 (use-package magit
   ; Awesome git interface inside emacs.
   ; <leader>gs - Git status
-
   :defer t
   :ensure t)
 
@@ -191,13 +187,6 @@
 (use-package projectile
   ; Project interaction library for emacs. Allows doing things like jump to
   ; file in project or project-wide search.
-
-  ; TODO: Figure out a better way to make projectile load quickly.
-  ; projectile takes almost 500ms to load, so defer loading until 10ms after
-  ; start up so emacs feels snappier. Deferring for 1s occassionally leads to
-  ; projectile not being available when I start using it immediately after
-  ; opening emacs.
-  :defer 0.01
 
   :config
   (use-package helm-projectile
@@ -217,16 +206,21 @@
 
   (projectile-mode t)
 
+  ; TODO: Figure out a better way to make projectile load quickly.
+  ; projectile takes almost 500ms to load, so defer loading until 10ms after
+  ; start up so emacs feels snappier. Deferring for 1s occassionally leads to
+  ; projectile not being available when I start using it immediately after
+  ; opening emacs.
+  :defer 0.01
   :ensure t)
 
 (use-package robe
   ; Allows powerful jump-to-method and other conveniences for Ruby.
 
-  :defer t
-
   :init
   (add-hook 'ruby-mode-hook 'robe-mode)
 
+  :defer t
   :ensure t)
 
 
@@ -247,14 +241,13 @@
   ; Managing paired characters like parentheses, braces, brackets, quotes, etc.
   ; Tutorial: https://ebzzry.github.io/emacs-pairs.html
 
-  :defer t
-
   :init
   (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
 
   :config
   (show-smartparens-global-mode t)
 
+  :defer t
   :ensure smartparens)
 
 
