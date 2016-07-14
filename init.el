@@ -109,11 +109,11 @@
     :config
     (global-evil-surround-mode 1)
 
-    (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
-
     :ensure t)
 
   (evil-mode 1)
+
+  (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
 
   (define-key evil-normal-state-map "gh" 'windmove-left)
   (define-key evil-normal-state-map "gj" 'windmove-down)
