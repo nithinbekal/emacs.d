@@ -232,6 +232,21 @@
   :ensure t)
 
 
+(use-package markdown-mode
+  ; Markdown support
+
+  :commands (markdown-mode gfm-mode)
+
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+
+  :init
+  (setq markdown-command "multimarkdown")
+
+  :ensure t)
+
+
 (use-package pbcopy
   ; macOS clipboard integration - Makes yanked text available in system
   ; clipboard and vice versa. This works automatically in GUI emacs, but this
