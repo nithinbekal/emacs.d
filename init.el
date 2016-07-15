@@ -378,6 +378,19 @@
   :ensure t)
 
 
+(use-package yasnippet
+  :init
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (add-hook 'prog-mode-hook #'yas-minor-mode)
+  (add-hook 'markdown-mode-hook #'yas-minor-mode)
+
+  :config
+  (yas-reload-all)
+
+  :defer t
+  :ensure t)
+
+
 ; Now that emacs has started up, we can set GC threshold to 50MB.
 (setq gc-cons-threshold 50000000)
 
