@@ -1,7 +1,10 @@
-
+.cache
 auto-save-list
 elpa
 projectile-bookmarks.eld
-saveplace
-smex-items
 
+# Used by saveplace package
+saved-places
+
+# Ignore the cache files created by eww-mode
+url/
