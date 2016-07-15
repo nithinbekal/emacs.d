@@ -106,6 +106,9 @@
     (evil-leader/set-leader ",")
     (evil-leader/set-key
       ","  'projectile-find-file
+
+      "bi" (lambda () (interactive) (load-file "~/.emacs.d/init.el"))
+
       "dd" 'dash-at-point
       "f"  'helm-projectile-ag
       "gs" 'magit-status
