@@ -98,8 +98,7 @@
 
   (use-package evil-leader
     ; Configure leader keys for evil mode.
-    ; (global-evil-leader-mode) should be loaded before (evil-mode), which is
-    ; why evil-leader is in the init section.
+    ; (global-evil-leader-mode) should be loaded before (evil-mode 1).
 
     :init (global-evil-leader-mode)
 
@@ -112,7 +111,12 @@
       "gs" 'magit-status
       "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
-      "v"  'split-window-right
+      "vs"  'split-window-right
+
+      "vi" (lambda ()
+             (interactive)
+             (find-file "~/.emacs.d/init.el"))
+
       "yb" (kbd "gg v G y")     ; Yank buffer
       "yt" 'yafolding-toggle-element
       "yy" 'yafolding-toggle-all
