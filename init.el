@@ -106,29 +106,17 @@
     (evil-leader/set-leader ",")
     (evil-leader/set-key
       ","  'projectile-find-file
-
+      "bb" 'helm-buffers-list
       "bi" (lambda () (interactive) (load-file "~/.emacs.d/init.el"))
-
       "dd" 'dash-at-point
       "f"  'helm-projectile-ag
       "gs" 'magit-status
-
-      "gg" (lambda ()
-             (interactive)
-             (find-file "~/Dropbox/todo/work.md"))
-
-      "gt" (lambda ()
-             (interactive)
-             (find-file "~/Dropbox/todo/gtd.md"))
-
+      "gg" (lambda () (interactive) (find-file "~/Dropbox/todo/work.md"))
+      "gt" (lambda () (interactive) (find-file "~/Dropbox/todo/gtd.md"))
       "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
       "vs"  'split-window-right
-
-      "vi" (lambda ()
-             (interactive)
-             (find-file "~/.emacs.d/init.el"))
-
+      "vi" (lambda () (interactive) (find-file "~/.emacs.d/init.el"))
       "yb" (kbd "gg v G y") ; Yank buffer
       "yt" 'yafolding-toggle-element
       "yy" 'yafolding-toggle-all
