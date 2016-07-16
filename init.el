@@ -286,82 +286,50 @@
   :ensure t)
 
 
+;; Allows powerful jump-to-method and other conveniences for Ruby.
 (use-package robe
-  ; Allows powerful jump-to-method and other conveniences for Ruby.
-
-  :init
-  (add-hook 'ruby-mode-hook 'robe-mode)
-
+  :init (add-hook 'ruby-mode-hook 'robe-mode)
   :defer t
   :ensure t)
 
 
+;; When you visit a file, point goes to the last place where it was when you
+;; previously visited the same file.
 (use-package saveplace
-  ; When you visit a file, point goes to the last place where it was when you
-  ; previously visited the same file.
-
-  :init
-  (setq save-place-file "~/.emacs.d/saved-places")
-
-  :config
-  (setq-default save-place t)
-
+  :init (setq save-place-file "~/.emacs.d/saved-places")
+  :config (setq-default save-place t)
   :ensure t)
 
 
-(use-package smartparens-config
-  ; Managing paired characters like parentheses, braces, brackets, quotes, etc.
-  ; Tutorial: https://ebzzry.github.io/emacs-pairs.html
-
+;; Balance parentheses and easily navigate S-expressions.
+(use-package paredit
   :init
-  (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
-
-  :config
-  (show-smartparens-global-mode t)
-
-  :defer t
-  :ensure smartparens)
-
-
-(use-package evil-smartparens
-  :init
-  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-
-  :defer t
+  (use-package evil-paredit :ensure t)
+  (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
   :ensure t)
 
 
+;; Always keep a few lines visible for context when scrolling
 (use-package smooth-scrolling
-  ; Always keep a few lines visible for context when scrolling
-
-  :config
-  (smooth-scrolling-mode 1)
-
+  :config (smooth-scrolling-mode 1)
   :ensure t)
 
 
+;; Modeline that is used in spacemacs
 (use-package spaceline-config
-  ; Modeline that is used in spacemacs
-
-  :init
-  (setq spaceline-window-numbers-unicode t)
-
-  :config
-  (spaceline-spacemacs-theme)
-
+  :init   (setq spaceline-window-numbers-unicode t)
+  :config (spaceline-spacemacs-theme)
   :ensure spaceline)
 
 
-(use-package ujelly-theme
-  ; Enable ujelly-theme - I use jellybean theme with vim, and ujelly is the
-  ; closest one I've found for emacs.
-  :ensure t)
+;; Enable ujelly-theme - I use jellybean theme with vim, and ujelly is the
+;; closest one I've found for emacs.
+(use-package ujelly-theme :ensure t)
 
 
-(use-package web-mode
-  ; Supports highlighting for HTML, CSS, erb etc.
-  :defer t
-  :ensure t)
+;; Supports highlighting for HTML, CSS, erb etc.
+(use-package web-mode :defer t :ensure t)
 
 
 (use-package yafolding
