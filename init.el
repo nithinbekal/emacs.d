@@ -304,9 +304,13 @@
 ;; Balance parentheses and easily navigate S-expressions.
 (use-package paredit
   :init
-  (use-package evil-paredit :ensure t)
+  (use-package evil-paredit
+    :init (add-hook 'paredit-mode-hook 'evil-paredit-mode)
+    :ensure t)
+
   (add-hook 'clojure-mode-hook 'enable-paredit-mode)
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+
   :ensure t)
 
 
