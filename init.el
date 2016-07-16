@@ -313,6 +313,13 @@
 
   :ensure t)
 
+;; Highlights delimiters such as parentheses, brackets or braces according to
+;; their depth.
+(use-package rainbow-delimiters
+  :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+  :defer t
+  :ensure t)
+
 
 ;; Always keep a few lines visible for context when scrolling
 (use-package smooth-scrolling
