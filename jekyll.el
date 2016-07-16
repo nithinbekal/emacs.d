@@ -7,6 +7,7 @@
 ;;   $ emacs -nw --load ~/.emacs.d/jekyll.el
 
 (interactive)
+(cd "~/Dropbox/blog")
 (pop-to-buffer (get-buffer-create (generate-new-buffer-name "jekyll")))
 (shell (current-buffer))
 (process-send-string nil "cd ~/Dropbox/blog\n")
