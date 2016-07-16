@@ -46,38 +46,30 @@
   (require 'use-package))
 
 
+;; Elixir tooling support
+(use-package alchemist
+  :init (add-hook 'elixir-mode-hook 'alchemist-mode)
+  :defer t
+  :ensure t)
+
+
 (use-package clojure-mode
   :config
-  (use-package cider
-    :defer t
-    :ensure t)
+  (use-package cider :defer t :ensure t)
 
   :defer t
   :ensure t)
 
 
-(use-package coffee-mode
-  :defer t
-  :ensure t)
+(use-package coffee-mode :defer t :ensure t)
 
 
-(use-package dash-at-point
-  ; Opens Dash.app to look up documentation for the word at point.
-  ; I map <leader>dd using evil-leader to be able to easily access it.
-  :ensure t)
+;; Opens Dash.app to look up documentation for the word at point on <leader>dd
+(use-package dash-at-point :ensure t)
 
 
-(use-package elixir-mode
-  ; Syntax highlighting and navigation for Elixir.
-
-  :config
-  (use-package alchemist
-    ; Elixir tooling support.
-    :defer t
-    :ensure t)
-
-  :defer t
-  :ensure t)
+;; Syntax highlighting and navigation for Elixir.
+(use-package elixir-mode :defer t :ensure t)
 
 
 (use-package evil
