@@ -145,10 +145,10 @@
   ; Use C-] to jump to definition in ruby
   (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
 
-  (define-key evil-normal-state-map "\C-h" 'windmove-left)
-  (define-key evil-normal-state-map "\C-j" 'windmove-down)
-  (define-key evil-normal-state-map "\C-k" 'windmove-up)
-  (define-key evil-normal-state-map "\C-l" 'windmove-right)
+  (define-key evil-normal-state-map "gh" 'windmove-left)
+  (define-key evil-normal-state-map "gj" 'windmove-down)
+  (define-key evil-normal-state-map "gk" 'windmove-up)
+  (define-key evil-normal-state-map "gl" 'windmove-right)
 
   ; Suspend emacs on C-z in normal mode (this is mapped to C-x C-z by default)
   (define-key evil-normal-state-map "\C-z" 'suspend-frame)
