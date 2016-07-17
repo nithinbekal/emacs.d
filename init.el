@@ -64,6 +64,10 @@
 (use-package coffee-mode :defer t :ensure t)
 
 
+;; Hide some minor modes in the mode line.
+(use-package diminish :ensure t)
+
+
 ;; Opens Dash.app to look up documentation for the word at point on <leader>dd
 (use-package dash-at-point :ensure t)
 
@@ -78,14 +82,8 @@
   :init
 
   (use-package evil-mc
-    ; Multiple cursor support
-    ; C-n/C-p to create cursors
-    ; C-t to skip cursor
-    ; gru to undo all cursors
-
-    :init
-    (global-evil-mc-mode 1)
-
+    :init (global-evil-mc-mode 1)
+    :diminish 'evil-mc-mode
     :ensure t)
 
   (use-package evil-leader
@@ -223,6 +221,7 @@
   (linum-relative-global-mode)
   (linum-relative-in-helm-p) ; Disable linum in helm
 
+  :diminish 'linum-relative-mode
   :ensure t)
 
 
@@ -258,6 +257,8 @@
 (use-package projectile
   ; Project interaction library for emacs. Allows doing things like jump to
   ; file in project or project-wide search.
+
+  :diminish projectile-mode
 
   :config
   (use-package helm-projectile
@@ -311,6 +312,7 @@
   (add-hook 'clojure-mode-hook 'enable-paredit-mode)
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
+  :diminish "(p)"
   :ensure t)
 
 ;; Highlights delimiters such as parentheses, brackets or braces according to
@@ -339,6 +341,11 @@
 (use-package ujelly-theme :ensure t)
 
 
+;; undo-tree-mode is available by deefault. This explicit mention is to hide the
+;; mode from the modeline using diminish.
+(use-package undo-tree :diminish undo-tree-mode)
+
+
 ;; Supports highlighting for HTML, CSS, erb etc.
 (use-package web-mode :defer t :ensure t)
 
@@ -364,6 +371,7 @@
   :config
   (yas-reload-all)
 
+  :diminish 'yas-minor-mode
   :defer t
   :ensure t)
 
