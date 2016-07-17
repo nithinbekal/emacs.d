@@ -1,5 +1,4 @@
 
-
 ; Set GC threshold to 100MB (default is 800KB) to improve start up time.
 ; For my current emacs.d setup, this has improved startup time has gone from
 ; 510ms to 270ms - a 47% improvement!
@@ -76,11 +75,11 @@
 (use-package elixir-mode :defer t :ensure t)
 
 
+;; Powerful vim emulation inside emacs.
 (use-package evil
-  ; Powerful vim emulation inside emacs.
-
   :init
-
+  ;; Multiple cursor support
+  ;; C-n/C-p to create cursors, C-t to skip cursor, gru to undo all cursors
   (use-package evil-mc
     :init (global-evil-mc-mode 1)
     :diminish 'evil-mc-mode
@@ -192,16 +191,14 @@
   (setq helm-M-x-fuzzy-match t)
   (setq helm-candidate-number-limit 100)
 
+  ;; helm-ag package allows use of helm-projectile-ag for project wide search.
+  ;; <leader>f is used for the project search.
+  (use-package helm-ag :defer t :ensure t)
+
   :config
   (require 'helm-config)
 
   (global-set-key (kbd "M-x") 'helm-M-x)
-
-  (use-package helm-ag
-    ; helm-ag package allows use of helm-projectile-ag for project wide search.
-    ; <leader>f is used for the project search.
-    :defer t
-    :ensure t)
 
   :defer t
   :ensure t)
@@ -247,11 +244,10 @@
   :ensure t)
 
 
-(use-package pbcopy
-  ; macOS clipboard integration - Makes yanked text available in system
-  ; clipboard and vice versa. This works automatically in GUI emacs, but this
-  ; package makes it available in terminal emacs too.
-  :ensure t)
+;; macOS clipboard integration - Makes yanked text available in system
+;; clipboard and vice versa. This works automatically in GUI emacs, but this
+;; package makes it available in terminal emacs too.
+(use-package pbcopy :ensure t)
 
 
 (use-package projectile
