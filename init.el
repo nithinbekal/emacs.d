@@ -22,9 +22,11 @@
 
 ; UI related stuff
 
+(set-default-font "Monaco-12")
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
 
 ; Start GUI emacs maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
