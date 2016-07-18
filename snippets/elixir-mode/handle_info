@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: handle_info
+# key: handle_info
+# --
+def handle_info(${1::message}, state) do
+  $0
+  {:noreply, state}
+end

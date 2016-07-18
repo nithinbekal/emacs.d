@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: supervisor
+# key: supervisor
+# --
+defmodule $1 do
+  use Supervisor
+
+  def start_link($2) do
+    Supervisor.start_link(__MODULE__, ${3::ok})
+  end
+
+  def init($2) do
+    children = [$0]
+    supervise(children, strategy: :one_for_one)
+  end
+end
