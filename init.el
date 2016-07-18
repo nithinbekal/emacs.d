@@ -27,12 +27,14 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-
 ; Start GUI emacs maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
 
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
+
+;; Auto insert closing parenthesis/brackets/braces
+(electric-pair-mode)
 
 
 ; use-package allows you to load packages lazily, and speeds up the initial
