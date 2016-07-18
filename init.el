@@ -36,6 +36,9 @@
 ;; Auto insert closing parenthesis/brackets/braces
 (electric-pair-mode)
 
+;; Answer yes/no prompts with y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+
 
 ; use-package allows you to load packages lazily, and speeds up the initial
 ; load time of emacs.
