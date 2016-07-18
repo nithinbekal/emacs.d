@@ -182,6 +182,9 @@
 ;; Helm allows fuzzy autocomplete for interactions requiring selecting an item
 ;; from many possible choices.
 ;; Detailed tutorial: http://tuhdo.github.io/helm-intro.html
+;; Related packages:
+;; - helm-ag package allows use of helm-projectile-ag for project wide search.
+;;   <leader>f is used for the project search.
 (use-package helm
   :init
   ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
@@ -190,10 +193,7 @@
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
   (setq helm-M-x-fuzzy-match t)
-  (setq helm-candidate-number-limit 100)
 
-  ;; helm-ag package allows use of helm-projectile-ag for project wide search.
-  ;; <leader>f is used for the project search.
   (use-package helm-ag :defer t :ensure t)
 
   :config
