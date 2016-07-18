@@ -104,7 +104,7 @@
     :config
     (evil-leader/set-leader ",")
     (evil-leader/set-key
-      ","  'projectile-find-file
+      ","  'helm-projectile-find-file
       "bb" 'helm-buffers-list
       "bi" (lambda () (interactive) (load-file "~/.emacs.d/init.el"))
       "dd" 'dash-at-point
