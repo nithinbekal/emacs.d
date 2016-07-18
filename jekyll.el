@@ -10,7 +10,5 @@
 (cd "~/Dropbox/blog")
 (pop-to-buffer (get-buffer-create (generate-new-buffer-name "jekyll")))
 (shell (current-buffer))
-(process-send-string nil "cd ~/Dropbox/blog\n")
 (process-send-string nil "jekyll serve\n")
 (delete-window)
-(projectile-find-file)
