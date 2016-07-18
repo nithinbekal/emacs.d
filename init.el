@@ -64,10 +64,13 @@
   :ensure t)
 
 
+;; Coffeescript syntax highlighting
 (use-package coffee-mode :defer t :ensure t)
 
 
 ;; Hide some minor modes in the mode line.
+;; use-package supports diminish, so you can hide modes by adding
+;; :diminish 'mode-name to the use-package form.
 (use-package diminish :ensure t)
 
 
@@ -80,19 +83,22 @@
 
 
 ;; Powerful vim emulation inside emacs.
+;; Evil specific packages:
+;; - evil-mc: Multiple cursor support
+;;   C-n/C-p to create cursors, C-t to skip cursor, gru to undo all cursors
+;; - evil-leader: Configure leader keys.
+;; - evil-surround: Emacs port of vim-surround. Allows adding/removing/changing
+;;   surround characters. eg. `cs"'` in normal mode changes surround from
+;;   double to single quotes.
 (use-package evil
   :init
-  ;; Multiple cursor support
-  ;; C-n/C-p to create cursors, C-t to skip cursor, gru to undo all cursors
   (use-package evil-mc
     :init (global-evil-mc-mode 1)
     :diminish 'evil-mc-mode
     :ensure t)
 
   (use-package evil-leader
-    ; Configure leader keys for evil mode.
     ; (global-evil-leader-mode) should be loaded before (evil-mode 1).
-
     :init (global-evil-leader-mode)
 
     :config
@@ -119,13 +125,7 @@
     :ensure t)
 
   (use-package evil-surround
-    ; Emacs port of vim-surround.
-    ; Allows adding/removing/changing surround characters.
-    ; eg. `cs"'` in normal mode changes surround from double to single quotes.
-
-    :config
-    (global-evil-surround-mode 1)
-
+    :config (global-evil-surround-mode 1)
     :ensure t)
 
   (evil-mode 1)
@@ -175,17 +175,14 @@
   :ensure t)
 
 
-(use-package haml-mode
-  ; HAML syntax highlighting
-  :defer t
-  :ensure t)
+;; HAML syntax highlighting
+(use-package haml-mode :defer t :ensure t)
 
 
+;; Helm allows fuzzy autocomplete for interactions requiring selecting an item
+;; from many possible choices.
+;; Detailed tutorial: http://tuhdo.github.io/helm-intro.html
 (use-package helm
-  ; Helm allows fuzzy autocomplete for interactions requiring selecting an item
-  ; from many possible choices.
-  ; Detailed tutorial: http://tuhdo.github.io/helm-intro.html
-
   :init
   ; Tramp sometimes messes with helm while it tries to figure out SSH/DNS
   ; settings. This will avoid the issues.
@@ -208,10 +205,9 @@
   :ensure t)
 
 
+;; Set relative numbering for line numbers. The actual line number is shown
+;; for the current line, but all other lines are shown relative to current.
 (use-package linum-relative
-  ; Set relative numbering for line numbers. The actual line number is shown
-  ; for the current line, but all other lines are shown relative to current.
-
   :init
   (setq
     linum-relative-current-symbol ""
@@ -226,25 +222,20 @@
   :ensure t)
 
 
-(use-package magit
-  ; Awesome git interface inside emacs.
-  ; <leader>gs - Git status
-  :defer t
-  :ensure t)
+;; Awesome git interface inside emacs.
+;; <leader>gs - Git status
+(use-package magit :defer t :ensure t)
 
 
+;; Markdown support
 (use-package markdown-mode
-  ; Markdown support
-
   :commands (markdown-mode gfm-mode)
 
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
 
-  :init
-  (setq markdown-command "multimarkdown")
-
+  :init (setq markdown-command "multimarkdown")
   :ensure t)
 
 
@@ -254,27 +245,24 @@
 (use-package pbcopy :ensure t)
 
 
+;; Project interaction library for emacs. Allows doing things like jump to
+;; file in project or project-wide search.
+;; Related packages:
+;; - helm-projectile: adds helm integration for projectile.
+;; - projectile-rails: Provides useful Ex commands like find model/controller etc.
+;;   Supports projectile-completion-system, allowing use of evil-leader
+;;   keybinding <leader>s for toggling between code and test.
 (use-package projectile
-  ; Project interaction library for emacs. Allows doing things like jump to
-  ; file in project or project-wide search.
-
   :diminish projectile-mode
 
   :config
   (use-package helm-projectile
-    ; Helm integration for projectile.
-
     :config
     (setq projectile-completion-system 'helm)
     (helm-projectile-on)
-
     :ensure t)
 
-  (use-package projectile-rails
-    ; Provides useful Ex commands like find model/controller etc.
-    ; Supports projectile-completion-system, allowing use of evil-leader
-    ; keybinding <leader>s for toggling between code and test.
-    :ensure t)
+  (use-package projectile-rails :ensure t)
 
   (projectile-mode t)
 
@@ -350,18 +338,15 @@
 (use-package web-mode :defer t :ensure t)
 
 
+;; Code folding
+;; <leader>yy toggles all elements
+;; <leader>yt toggles current element
 (use-package yafolding
-  ; Code folding
-  ; <leader>yy toggles all elements
-  ; <leader>yt toggles current element
-
-  :init
-  (add-hook 'prog-mode-hook 'yafolding-mode)
-
+  :init (add-hook 'prog-mode-hook 'yafolding-mode)
   :defer t
   :ensure t)
 
-
+;; Insert snippets with TAB.
 (use-package yasnippet
   :init
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
