@@ -13,7 +13,7 @@ package for managing package configuration.
 Here's a few awesome emacs configurations that helped me get this set up.
 
 - [Spacemacs](https://github.com/syl20bnr/spacemacs) is an excellent starter kit for people coming in from vim.
-- [Sacha Chua's Emacs configuration](https://github.com/jwiegley/use-package) - written in literate programming style.
+- [Sacha Chua's Emacs configuration](http://pages.sachachua.com/.emacs.d/Sacha.html) - written in literate programming style.
 - [Howard Abraham's .emacs](https://github.com/howardabrams/dot-files/blob/master/emacs.org) - another literate programming style emacs configuration.
 - [jcf/emacs.d](https://github.com/jcf/emacs.d)
 
