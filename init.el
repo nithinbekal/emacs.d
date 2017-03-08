@@ -27,11 +27,17 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
 ; Start GUI emacs maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
 
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
+
+;; Don't litter project directories with #autosave_files#
+(setq make-backup-files nil)
 
 ;; Auto insert closing parenthesis/brackets/braces
 (electric-pair-mode)
@@ -60,7 +66,7 @@
 
 
 (use-package clojure-mode
-  :config
+  :init
   (use-package cider :defer t :ensure t)
 
   :defer t
@@ -113,7 +119,7 @@
       "dd" 'dash-at-point
       "f"  'helm-projectile-ag
       "gs" 'magit-status
-      "gg" (lambda () (interactive) (find-file "~/Dropbox/todo/work.md"))
+      "gg" (lambda () (interactive) (find-file "~/Dropbox/notes/todo.org"))
       "gt" (lambda () (interactive) (find-file "~/Dropbox/todo/gtd.md"))
       "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
@@ -145,6 +151,10 @@
       (let ((prev-pos (point)))
           (back-to-indentation)
           (kill-region (point) prev-pos))))
+
+  ;; (evil-define-key 'normal clojure-mode-map (kbd "C-x") 'cider-eval-last-sexp)
+
+  ;; (evil-define-key 'insert cider-mode-map (kbd "M-up") )
 
   ; Use C-] to jump to definition in ruby
   (evil-define-key 'normal ruby-mode-map (kbd "C-]") 'robe-jump)
@@ -208,6 +218,11 @@
   :ensure t)
 
 
+(use-package idris-mode
+  :defer t
+  :ensure t)
+
+
 ;; Set relative numbering for line numbers. The actual line number is shown
 ;; for the current line, but all other lines are shown relative to current.
 (use-package linum-relative
@@ -262,6 +277,7 @@
   (use-package helm-projectile
     :config
     (setq projectile-completion-system 'helm)
+    (setq projectile-create-missing-test-files t)
     (helm-projectile-on)
     :ensure t)
 
@@ -314,6 +330,11 @@
   :ensure t)
 
 
+;; Standard ML
+(use-package sml-mode
+  :ensure t)
+
+
 ;; Always keep a few lines visible for context when scrolling
 (use-package smooth-scrolling
   :config (smooth-scrolling-mode 1)
@@ -339,6 +360,10 @@
 
 ;; Supports highlighting for HTML, CSS, erb etc.
 (use-package web-mode :defer t :ensure t)
+
+
+;; Distraction free writing mode
+(use-package writeroom-mode :defer t :ensure t)
 
 
 ;; Code folding
@@ -367,3 +392,17 @@
 ; Now that emacs has started up, we can set GC threshold to 50MB.
 (setq gc-cons-threshold 50000000)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (evil-tabs yasnippet yafolding writeroom-mode web-mode use-package ujelly-theme spaceline smooth-scrolling sml-mode robe rainbow-delimiters projectile-rails pdf-tools pbcopy markdown-mode linum-relative idris-mode helm-projectile helm-ag haml-mode evil-surround evil-smartparens evil-paredit evil-mc evil-magit evil-leader dash-at-point coffee-mode clojure-mode-extra-font-locking cider alchemist))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
