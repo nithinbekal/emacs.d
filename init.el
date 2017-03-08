@@ -45,6 +45,10 @@
 ;; Answer yes/no prompts with y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Move GUI customizations to separate file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 
 ; use-package allows you to load packages lazily, and speeds up the initial
 ; load time of emacs.
@@ -391,18 +395,3 @@
 
 ; Now that emacs has started up, we can set GC threshold to 50MB.
 (setq gc-cons-threshold 50000000)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (evil-tabs yasnippet yafolding writeroom-mode web-mode use-package ujelly-theme spaceline smooth-scrolling sml-mode robe rainbow-delimiters projectile-rails pdf-tools pbcopy markdown-mode linum-relative idris-mode helm-projectile helm-ag haml-mode evil-surround evil-smartparens evil-paredit evil-mc evil-magit evil-leader dash-at-point coffee-mode clojure-mode-extra-font-locking cider alchemist))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
