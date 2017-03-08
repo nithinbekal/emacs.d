@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: test
+# key: test
+# --
+require 'test_helper'
+
+class $1 < ActiveSupport::TestCase
+  test '$2' do
+    $0
+  end
+end

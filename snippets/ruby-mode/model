@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ActiveRecord Model
+# key: model
+# --
+class $1 < ApplicationRecord
+  $0
+end
