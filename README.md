@@ -15,9 +15,9 @@ and running `jekyll serve` in a shell buffer
 can be found in jekyll.el.
 The Jekyll blog can be run by:
 
-{% highlight bash %}
+```bash
 emacs -nw --load path/to/jekyll.el
-{% endhighlight %}
+```
 
 ## Links
 
