@@ -127,7 +127,7 @@
       "gt" (lambda () (interactive) (find-file "~/Dropbox/todo/gtd.md"))
       "q"  'kill-buffer-and-window
       "s"  'projectile-toggle-between-implementation-and-test
-      "vs" 'split-window-right
+      "vs" 'split-window-horizontally
       "vi" (lambda () (interactive) (find-file "~/.emacs.d/init.el"))
       "yb" (kbd "gg v G y") ; Yank buffer
       "yt" 'yafolding-toggle-element
