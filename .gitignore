@@ -2,6 +2,7 @@
 auto-save-list
 elpa
 projectile-bookmarks.eld
+custom.el
 
 # Used by saveplace package
 saved-places
