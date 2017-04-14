@@ -8,6 +8,17 @@ I use the excellent
 [`use-package`](https://github.com/jwiegley/use-package)
 package for managing package configuration.
 
+## Open Jekyll
+
+My setup for opening my Jekyll blog in emacs
+and running `jekyll serve` in a shell buffer
+can be found in jekyll.el.
+The Jekyll blog can be run by:
+
+{% highlight bash %}
+emacs -nw --load path/to/jekyll.el
+{% endhighlight %}
+
 ## Links
 
 Here's a few awesome emacs configurations that helped me get this set up.
