@@ -132,7 +132,6 @@
       "yb" (kbd "gg v G y") ; Yank buffer
       "yt" 'yafolding-toggle-element
       "yy" 'yafolding-toggle-all
-      "x"  'helm-M-x
       )
 
     :ensure t)
