@@ -336,6 +336,7 @@
 
 ;; Standard ML
 (use-package sml-mode
+  :defer t
   :ensure t)
 
 
