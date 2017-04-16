@@ -345,13 +345,6 @@
   :ensure t)
 
 
-;; Modeline that is used in spacemacs
-(use-package spaceline-config
-  :init   (setq spaceline-window-numbers-unicode t)
-  :config (spaceline-spacemacs-theme)
-  :ensure spaceline)
-
-
 ;; Enable ujelly-theme - I use jellybean theme with vim, and ujelly is the
 ;; closest one I've found for emacs.
 (use-package ujelly-theme :ensure t)
